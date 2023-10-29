@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiFillHome, AiOutlineBook } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
@@ -25,7 +26,7 @@ const Slidebar = () => {
       <div className="w-full">
         <Link to="/">
           <div
-            className={`p-5 hover:bg-[#FFEAF8] hover:text-[#FF8DD8] hover:cursor-pointer ${
+            className={`p-5 flex justify-center items-center gap-3 hover:bg-[#FFEAF8] hover:text-[#FF8DD8] hover:cursor-pointer ${
               active === "home"
                 ? "bg-white text-[#FF8DD8] "
                 : "bg-[#FF8DD8] text-white"
@@ -34,12 +35,13 @@ const Slidebar = () => {
               setActive("home");
             }}
           >
+            <AiFillHome className="text-center text-2xl font-semibold" />
             <p className="text-center text-2xl font-semibold">Home</p>
           </div>
         </Link>
         <Link to="/booking">
           <div
-            className={`p-5 hover:bg-[#FFEAF8] hover:text-[#FF8DD8] hover:cursor-pointer ${
+            className={`p-5 flex justify-center items-center gap-3 hover:bg-[#FFEAF8] hover:text-[#FF8DD8] hover:cursor-pointer ${
               active === "booking"
                 ? "bg-white text-[#FF8DD8] "
                 : "bg-[#FF8DD8] text-white"
@@ -48,6 +50,7 @@ const Slidebar = () => {
               setActive("booking");
             }}
           >
+            <AiOutlineBook className="text-center text-2xl font-semibold" />
             <p className="text-center text-2xl font-semibold">Booking</p>
           </div>
         </Link>

@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="bg-[#FFEAF8] w-full flex">
       <Slidebar />
-      <div className="w-[100vw] md:w-[100%] p-5">
+      <div className="w-[100%] p-5">
         <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
