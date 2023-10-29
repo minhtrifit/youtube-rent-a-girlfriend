@@ -44,7 +44,7 @@ const App = () => {
       >
         <AiOutlineMenu className="text-white relative text-2xl md:text-3xl hover:cursor-pointer" />
       </div>
-      <div className="w-[100%] p-5">
+      <div className="w-[100%] md:ml-[250px] p-5">
         <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/booking" element={<Booking />} />

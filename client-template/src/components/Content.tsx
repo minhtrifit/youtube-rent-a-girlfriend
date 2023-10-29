@@ -15,7 +15,7 @@ const Content = () => {
   };
 
   return (
-    <div className="bg-white flex flex-col mt-7 rounded-md p-10">
+    <div className="bg-white min-h-screen flex flex-col mt-7 rounded-md p-10">
       <Select
         className="w-[300px] h-[40px] mb-10"
         options={options}

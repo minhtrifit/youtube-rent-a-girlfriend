@@ -13,7 +13,7 @@ const Slidebar = () => {
   }, []);
 
   return (
-    <div className="hidden md:flex w-[300px] h-screen bg-[#FF8DD8] py-14 flex-col items-center">
+    <div className="hidden md:flex fixed w-[250px] h-screen bg-[#FF8DD8] py-14 flex-col items-center">
       <div className="w-[150px] h-[150px] border-solid border-4 border-[#FFEAF8] rounded-full">
         <img
           src="../images/avatar.jpg"
