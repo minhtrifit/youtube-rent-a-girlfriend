@@ -2,8 +2,8 @@ import Select, { SingleValue } from "react-select";
 
 const Content = () => {
   const options = [
+    { value: "ratingup", label: "Rating Up" },
     { value: "ratingdown", label: "Rating Down" },
-    { value: "ratingup", label: "Rating up" },
   ];
 
   const handleSort = (
@@ -13,7 +13,7 @@ const Content = () => {
   };
 
   return (
-    <div className="bg-white h-[150px] flex justify-between mt-7 rounded-md p-10">
+    <div className="bg-white flex justify-between mt-7 rounded-md p-10">
       <Select
         className="w-[300px] h-[40px]"
         options={options}

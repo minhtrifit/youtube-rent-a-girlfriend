@@ -15,7 +15,10 @@ const Slidebar = () => {
           className="rounded-full object-cover"
         />
       </div>
-      <div className="p-3 text-white font-semibold flex justify-center items-center gap-3 text-2xl mt-6 my-14">
+      <div
+        className="p-3 rounded-md text-white font-semibold flex justify-center
+                  items-center gap-3 text-2xl mt-6 my-14 hover:cursor-pointer hover:bg-[#FFEAF8] hover:text-[#FF8DD8]"
+      >
         <FiLogOut style={{ fontSize: "1.25em" }} />
         <p>Logout</p>
       </div>
