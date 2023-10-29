@@ -8,11 +8,11 @@ import Booking from "./pages/Booking";
 
 const App = () => {
   return (
-    <div className="bg-[#FFEAF8] flex">
+    <div className="bg-[#FFEAF8] w-full flex">
       <Slidebar />
-      <div>
+      <div className="w-[100vw] md:w-[100%] p-5">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
         </Routes>
       </div>

@@ -7,7 +7,7 @@ const Slidebar = () => {
   const [active, setActive] = useState<string>("home");
 
   return (
-    <div className="w-[250px] h-screen bg-[#FF8DD8] py-14 flex flex-col items-center">
+    <div className="hidden md:flex w-[300px] h-screen bg-[#FF8DD8] py-14 flex-col items-center">
       <div className="w-[150px] h-[150px] border-solid border-4 border-[#FFEAF8] rounded-full">
         <img
           src="../images/avatar.jpg"
@@ -15,7 +15,7 @@ const Slidebar = () => {
           className="rounded-full object-cover"
         />
       </div>
-      <div className="w-[60%] p-3 text-white font-semibold flex justify-center items-center gap-3 text-2xl mt-6 my-14">
+      <div className="p-3 text-white font-semibold flex justify-center items-center gap-3 text-2xl mt-6 my-14">
         <FiLogOut style={{ fontSize: "1.25em" }} />
         <p>Logout</p>
       </div>
