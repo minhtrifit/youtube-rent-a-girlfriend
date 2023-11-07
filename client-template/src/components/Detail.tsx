@@ -1,11 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Modal from "react-modal";
+import DatePicker from "react-datepicker";
+import InputNumber from "rc-input-number";
 
-import { AiFillStar, AiOutlineClose } from "react-icons/ai";
+import { AiTwotoneCalendar, AiFillStar, AiOutlineClose } from "react-icons/ai";
+
+import "./index.less";
+
+const formatDate = (inputDate: string) => {
+  const date = new Date(inputDate);
+  if (!isNaN(date.getTime())) {
+    // Months use 0 index.
+    return (
+      date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+    );
+  }
+};
 
 const Detail = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+  const [dating, setDating] = useState<string>("");
+  const [time, setTime] = useState<string | number>(1);
+
+  useEffect(() => {
+    console.log(dating, time);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startDate]);
 
   const handleOpenBookingModal = () => {
     setIsOpen(true);
@@ -51,14 +73,12 @@ const Detail = () => {
             </p>
             <div className="flex flex-col gap-5">
               <div className="flex flex-col md:flex-row">
-                <p className="w-[300px] text-xl font-bold">Booking ID:</p>
-                <p className="text-xl">1542</p>
+                <p className="w-[300px] text-xl font-bold">Customer ID:</p>
+                <p className="text-xl">100</p>
               </div>
               <div className="flex flex-col md:flex-row">
-                <p className="w-[300px] text-xl font-bold">
-                  Customer Username:
-                </p>
-                <p className="text-xl">kazuya123</p>
+                <p className="w-[300px] text-xl font-bold">Girl Friend ID:</p>
+                <p className="text-xl">1</p>
               </div>
               <div className="flex flex-col md:flex-row">
                 <p className="w-[300px] text-xl font-bold">Girl Friend Name:</p>
@@ -66,11 +86,36 @@ const Detail = () => {
               </div>
               <div className="flex flex-col md:flex-row">
                 <p className="w-[300px] text-xl font-bold">Dating:</p>
-                <p className="text-xl">5/11/2023</p>
+                <div className="flex items-center gap-3">
+                  <AiTwotoneCalendar className="text-xl" />
+                  <DatePicker
+                    className="hover:cursor-pointer"
+                    selected={startDate}
+                    onChange={(date: any) => {
+                      const d = new Date(date)
+                        .toISOString()
+                        .slice(0, 10)
+                        .split("T", 1)[0]
+                        .replace(/-/g, "/");
+
+                      const formatD: any = formatDate(d);
+                      setStartDate(date);
+                      setDating(formatD);
+                    }}
+                  />
+                </div>
               </div>
               <div className="flex flex-col md:flex-row">
                 <p className="w-[300px] text-xl font-bold">Time (hour):</p>
-                <p className="text-xl">2</p>
+                <InputNumber
+                  style={{ width: 100 }}
+                  onChange={(val: any) => {
+                    setTime(val);
+                  }}
+                  min={1}
+                  // max={99}
+                  defaultValue={1}
+                />
               </div>
               <div className="flex flex-col md:flex-row">
                 <p className="w-[300px] text-xl font-bold">Messages:</p>
@@ -83,7 +128,10 @@ const Detail = () => {
             </div>
             <div className="mt-10 flex justify-end items-center gap-5">
               <p className="text-3xl font-bold text-[#FF8DD8]">608.84 ¥</p>
-              <button className="w-[100px] text-white font-semibold bg-[#F9C40B] p-3 rounded-md">
+              <button
+                type="submit"
+                className="w-[100px] text-white font-semibold bg-[#F9C40B] p-3 rounded-md"
+              >
                 Booking
               </button>
             </div>

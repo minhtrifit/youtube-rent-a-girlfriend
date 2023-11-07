@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import "./App.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import Slidebar from "./components/Slidebar";
 import MyDrawer from "./components/MyDrawer";
