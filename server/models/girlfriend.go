@@ -1,9 +1,10 @@
 package models
 
 type Account struct {
-	Id       int    `json:"id"`
-	Username string `json:"username"`
-	Password string `json:"password"`
+	Id          int    `json:"id"`
+	Username    string `json:"username"`
+	Password    string `json:"password"`
+	AccessToken string `json:"accessToken"`
 }
 
 type GirlFriend struct {

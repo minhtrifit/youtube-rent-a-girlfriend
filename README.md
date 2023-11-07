@@ -43,6 +43,23 @@
 
 ## Server API List
 
+* Login: [POST]:`http://localhost:5000/login`
+
+```php
+{
+  "username": "kazuya123",
+  "password": "kazuya123"
+}
+```
+
+* Verify token: [POST]:`http://localhost:5000/verify`
+
+```php
+{
+  "accessToken": "oBPfKg2HUKL!62HP4lqOX1Tz7hH05QzSBkdhAd9aIT83R6ED76kPFF61Mz3rsb=b5EkzlGTTUdMGrkUBMCfrCI7343z?fvbg7e2BOJUlc16cXvzJNENBl/p-TRBiRdogjfpukjAiAohi0ekPOvn5f-5O9ZBtcymwXgMLyDi3KBzeB/K1?KG?Gg2IwCL6xmS6DDn/kAZGkW/JCRG7sYPGD04?0!OS/8/zvbeSx5sHNePb5T478SG!VZqaNpPB02l0"
+}
+```
+
 * Get GirlFriend List: [GET]:`http://localhost:5000/girlfriends`
 
 * Get Booking By Customer ID: [GET]:`http://localhost:5000/booking`

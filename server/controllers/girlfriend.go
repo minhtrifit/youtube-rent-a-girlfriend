@@ -201,7 +201,7 @@ func AddNewBooking(ctx *gin.Context) {
 		panic(err);
 	}
 
-	ctx.JSON(200, gin.H{
+	ctx.JSON(201, gin.H{
 		"message": "Add booking successfully",
 		"booking_info": userBooking,
 	})

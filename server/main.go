@@ -27,6 +27,14 @@ func main() {
 
 	router.GET("/", controllers.HandleRunServer);
 
+	router.POST("/login", func(ctx *gin.Context) {
+		controllers.Login(ctx);
+	});
+
+	router.POST("/verify", func(ctx *gin.Context) {
+		controllers.VerifyToken(ctx);
+	});
+
 	router.GET("/girlfriends", func(ctx *gin.Context) {
 		controllers.GetAllGirlFriends(ctx);
 	});
