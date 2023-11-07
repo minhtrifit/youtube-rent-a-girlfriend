@@ -40,3 +40,28 @@
 
 * Run server: go run main.go
 ```
+
+## Server API List
+
+* Get GirlFriend List: [GET]:`http://localhost:5000/girlfriends`
+
+* Get Booking By Customer ID: [GET]:`http://localhost:5000/booking`
+
+```php
+{
+    "id": 100,
+}
+```
+
+* Add New Booking: [POST]:`http://localhost:5000/addbooking`
+
+```php
+{
+    "girlFriendId": 1,
+    "customerId": 100,
+    "dating": "5/11/2023",
+    "time": 2,
+    "price": 608.84,
+    "messages": "Hope to see you :>"
+}
+```
