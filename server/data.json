@@ -34,6 +34,7 @@
     {
       "id": 1,
       "girlFriendId": 1,
+      "girlFriendName": "Chizuru Mizuhara",
       "customerId": 100,
       "dating": "5/11/2023",
       "time": 2,

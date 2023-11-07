@@ -47,6 +47,7 @@ func LoadDatabase() models.Database {
 
 		newBooking.Id = booking.Id;
 		newBooking.GirlFriendId = booking.GirlFriendId;
+		newBooking.GirlFriendName = booking.GirlFriendName;
 		newBooking.CustomerId = booking.CustomerId;
 		newBooking.Dating = booking.Dating;
 		newBooking.Time = booking.Time;
@@ -59,6 +60,42 @@ func LoadDatabase() models.Database {
 	Loaded = true;
 
 	return db;
+}
+
+func GetGirlFriendById(ctx *gin.Context) {
+	// Load data from database
+	if Loaded != true {
+		LoadDatabase();		
+	}
+
+	var targetGirlFriend models.GirlFriend;
+
+	gf := models.GirlFriend{};
+
+	// Call BindJSON to bind the received JSON to Booking Struct.
+    if err := ctx.BindJSON(&gf); err != nil {
+        return;
+    }
+
+	for _, v := range List {
+		if(v.Id == gf.Id) {
+			targetGirlFriend = v;
+		}
+	}
+
+	// Not found girlfriend
+	if(targetGirlFriend.Name == "") {
+		ctx.JSON(404, gin.H{
+			"message": "GirlFriend not found",
+		})	
+
+		return;
+	}
+
+	ctx.JSON(200, gin.H{
+		"message": "Get data successfully",
+		"data": targetGirlFriend,
+	})
 }
 
 func GetAllGirlFriends(ctx *gin.Context) {	
@@ -124,15 +161,6 @@ func GetBookingByCustomerId(ctx *gin.Context) {
 }
 
 func AddNewBooking(ctx *gin.Context) {
-	// {
-	// 	"girlFriendId": 1,
-	// 	"customerId": 100,
-	// 	"dating": "5/11/2023",
-	// 	"time": 2,
-	// 	"price": 608.84,
-	// 	"messages": "Hope to see you :>"
-	//   }
-
 	var newBookingId = 0;
 
 	// Load data from database
@@ -158,6 +186,7 @@ func AddNewBooking(ctx *gin.Context) {
 
 	userBooking.Id = newBookingId;
 	userBooking.GirlFriendId = newBooking.GirlFriendId;
+	userBooking.GirlFriendName = newBooking.GirlFriendName;
 	userBooking.CustomerId = newBooking.CustomerId;
 	userBooking.Dating = newBooking.Dating;
 	userBooking.Time = newBooking.Time;
@@ -204,5 +233,6 @@ func AddNewBooking(ctx *gin.Context) {
 	ctx.JSON(201, gin.H{
 		"message": "Add booking successfully",
 		"booking_info": userBooking,
+		"booking_message:": newBooking.GirlFriendName + " has accepted your request",
 	})
 }

@@ -35,6 +35,10 @@ func main() {
 		controllers.VerifyToken(ctx);
 	});
 
+	router.GET("/girlfriend", func(ctx *gin.Context) {
+		controllers.GetGirlFriendById(ctx);
+	});
+
 	router.GET("/girlfriends", func(ctx *gin.Context) {
 		controllers.GetAllGirlFriends(ctx);
 	});

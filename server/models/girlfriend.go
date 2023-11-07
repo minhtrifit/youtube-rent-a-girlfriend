@@ -16,13 +16,14 @@ type GirlFriend struct {
 }
 
 type Booking struct {
-	Id           int     `json:"id"`
-	GirlFriendId int     `json:"girlFriendId"`
-	CustomerId   int     `json:"customerId"`
-	Dating       string  `json:"dating"`
-	Time         int     `json:"time"`
-	Price        float64 `json:"price"`
-	Messages     string  `json:"messages"`
+	Id             int     `json:"id"`
+	GirlFriendId   int     `json:"girlFriendId"`
+	GirlFriendName string  `json:"girlFriendName"`
+	CustomerId     int     `json:"customerId"`
+	Dating         string  `json:"dating"`
+	Time           int     `json:"time"`
+	Price          float64 `json:"price"`
+	Messages       string  `json:"messages"`
 }
 
 type Database struct {

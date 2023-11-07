@@ -21,6 +21,7 @@ const formatDate = (inputDate: string) => {
 const Detail = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
+
   const [dating, setDating] = useState<string>("");
   const [time, setTime] = useState<string | number>(1);
 

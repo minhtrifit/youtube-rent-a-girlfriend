@@ -62,6 +62,14 @@
 
 * Get GirlFriend List: [GET]:`http://localhost:5000/girlfriends`
 
+* Get GirlFriend By Customer ID: [GET]:`http://localhost:5000/girlfriend`
+
+```php
+{
+    "id": 1,
+}
+```
+
 * Get Booking By Customer ID: [GET]:`http://localhost:5000/booking`
 
 ```php
@@ -75,6 +83,7 @@
 ```php
 {
     "girlFriendId": 1,
+    "girlFriendName": "Chizuru Mizuhara",
     "customerId": 100,
     "dating": "5/11/2023",
     "time": 2,
